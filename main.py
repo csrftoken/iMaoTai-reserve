@@ -7,12 +7,13 @@ import login
 import process
 import privateCrypt
 
-DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"
 TODAY = datetime.date.today().strftime("%Y%m%d")
-logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s  %(filename)s : %(levelname)s  %(message)s',  # 定义输出log的格式
-                    stream=sys.stdout,
-                    datefmt=DATE_FORMAT)
+logging.basicConfig(
+    level=logging.INFO,
+    format='[%(asctime)s,%(msecs)03d][%(levelname)s]: %(message)s',
+    stream=sys.stdout,
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
 
 process.get_current_session_id()
 
